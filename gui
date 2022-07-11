@@ -1,0 +1,55 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+local Window = Library.CreateLib("Script Melxnxx", "Ocean")
+
+    -- MAIN
+
+    local Main = Window:NewTab("Main")
+
+    local MainSection = Main:NewSection("Main")
+
+MainSection:NewToggle("farm ticket", "farm ticket", function(state)
+
+        if state then
+
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/melcanz/rblxsc/main/tiketoff'))()
+
+        else
+
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/melcanz/rblxsc/main/tiketon'))()
+
+        end
+
+    end)
+
+    MainSection:NewButton("Infinite Yield", "FE Admin Commands", function()
+
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+
+    end)
+
+    --LOCAL PLAYER
+
+    local Player = Window:NewTab("Player")
+
+    local PlayerSection = Player:NewSection("Player")
+
+    PlayerSection:NewSlider("Walkspeed", "SPEED!!", 500, 16, function(s)
+
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+
+    end)
+
+    PlayerSection:NewSlider("Jumppower", "JUMP HIGH!!", 350, 50, function(s)
+
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+
+    end)
+
+    PlayerSection:NewButton("Reset WS/JP", "Resets to all defaults", function()
+
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+
+    end)
